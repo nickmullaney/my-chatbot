@@ -8,4 +8,18 @@ const zendesk: AxiosInstance = axios.create ({
     },
 });
 
-export default zendesk;
+export async function getZendeskArticles(): Promise<ZendeskArticle[]>{
+    try{
+        const response = await zendesk.get('/help_center/articles.json');
+        return response.data.articles;
+    } catch (error) {
+        console.error('Error fetching articles from Zendesk:', error);
+        return [];
+      }
+}
+
+interface ZendeskArticle{
+    id: number;
+    title: string;
+    body: string;
+}
