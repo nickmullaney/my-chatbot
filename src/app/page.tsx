@@ -1,3 +1,4 @@
+'use client'
 import ChatInterface from '@/components/chatInterface';
 import Image from 'next/image';
 
