@@ -1,20 +1,13 @@
-// src/app/page.tsx
-import 'react-chat-widget/lib/styles.css';
-import 'tailwindcss/tailwind.css';
-import { AppProps, useClient } from 'next/app';
-import Chat from '@/components/chat';
+'use client'
+import ChatInterface from '@/components/chatInterface';
+import Image from 'next/image';
 
 
-function MyApp({ Component, pageProps }: AppProps) {
-  useClient(); // Mark the app as a client entry
-
+export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center p-4">
-      {/* Your layout and components */}
-      <Component {...pageProps} />
-      <Chat />
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+   
+      <ChatInterface /> {/* Integrate the chat interface component */}
+    </main>
   );
 }
-
-export default MyApp;

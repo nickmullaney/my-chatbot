@@ -2,7 +2,7 @@
 import React from 'react';
 import { Widget, addResponseMessage, addUserMessage } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
-import openai from '../utils/openai'; // Import your OpenAI utility
+import openai from '@/utils/openai'; // Import your OpenAI utility
 
 const ChatInterface: React.FC = () => {
   const handleNewUserMessage = async (newMessageText: string) => {
