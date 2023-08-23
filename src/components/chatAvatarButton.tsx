@@ -14,4 +14,4 @@ const ChatAvatarButton: React.FC = () => {
             {isChatOpen && <ChatInterface />}
         </div>
     )
-    )
+}
