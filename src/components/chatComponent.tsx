@@ -2,7 +2,7 @@
 import { useChat, Message } from "ai/react"
 
 export default function ChatComponent() {
-    // Vercel AI SDK (ai package) useChat()
+  
     // useChat -> handles messages for us, user input, handling user submits, etc.
     const { input, handleInputChange, handleSubmit, isLoading, messages } = useChat();
     // messages -> [user asks a question, gpt-4 response, user asks again, gpt-4 responds]
@@ -15,16 +15,15 @@ export default function ChatComponent() {
             {messages.map((message : Message) => {
                 return (
                     <div key={message.id}>
-                        {/*  Name of person talking */}
                         {
                             message.role === "assistant"
                             ?
                             <h3 className="text-lg font-semibold mt-2">
-                                GPT-4
+                                Marge
                             </h3>
                             :
                             <h3 className="text-lg font-semibold mt-2">
-                                User
+                                You
                             </h3>
                         }
                         
