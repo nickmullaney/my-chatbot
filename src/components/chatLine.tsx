@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import Balancer from 'react-wrap-balancer'
+import { Avatar } from '@mui/material'
 
 // wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
 const BalancerWrapper = (props: any) => <Balancer {...props} />
@@ -17,9 +18,7 @@ export const LoadingChatLine = () => (
     <div className="flex flex-grow space-x-3">
       <div className="min-w-0 flex-1">
         <p className="font-large text-xxl text-gray-900">
-          <a href="#" className="hover:underline">
-            AI
-          </a>
+            <Avatar src='https://6423873.fs1.hubspotusercontent-na1.net/hub/6423873/hubfs/chatbot-new7.png?width=108&height=108' />
         </p>
         <div className="space-y-4 pt-4">
           <div className="grid grid-cols-3 gap-4">
@@ -60,7 +59,7 @@ export function ChatLine({ role = 'assistant', content }: ChatGPTMessage) {
             <div className="flex-1 gap-4">
               <p className="font-large text-xxl text-gray-900">
                 <a href="#" className="hover:underline">
-                  {role == 'assistant' ? 'AI' : 'You'}
+                  {role == 'assistant' ? 'Marge' : 'You'}
                 </a>
               </p>
               <p

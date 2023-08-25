@@ -44,7 +44,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
         setInput('');
       }}
     >
-      Say
+      Send
     </Button>
   </div>
 );

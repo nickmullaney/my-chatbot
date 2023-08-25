@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import { Container, Typography, Box } from '@mui/material';
 import Chat from '../components/chat'; // Adjust the path as needed
