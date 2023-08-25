@@ -45,7 +45,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
   </div>
 )
 
-export function Chat() {
+export default function Chat() {
   const [messages, setMessages] = useState<ChatGPTMessage[]>(initialMessages)
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
