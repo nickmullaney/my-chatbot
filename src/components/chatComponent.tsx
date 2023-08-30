@@ -44,7 +44,7 @@ export default function ChatComponent() {
                 <p>User Message</p>
                 <textarea
                     className="mt-2 w-full bg-slate-600 p-2"
-                    placeholder={"What are data structures and algorithims?"}
+                    placeholder={"What are data structures and algorithms?"}
                     value={input}
                     onChange={handleInputChange}
                 />

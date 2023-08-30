@@ -45,7 +45,7 @@ export function ChatLine({ role = 'assistant', content }: ChatGPTMessage) {
   if (!content) {
     return null
   }
-  const formatteMessage = convertNewLines(content)
+  const formattMessage = convertNewLines(content)
 
   return (
     <div
@@ -68,7 +68,7 @@ export function ChatLine({ role = 'assistant', content }: ChatGPTMessage) {
                   role == 'assistant' ? 'font-semibold font- ' : 'text-gray-400'
                 )}
               >
-                {formatteMessage}
+                {formattMessage}
               </p>
             </div>
           </div>

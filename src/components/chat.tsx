@@ -8,6 +8,7 @@ interface ChatProps {
   onClose: () => void;
 }
 
+// Define the name for the chat cookie
 const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3';
 
 // Default first message to display in UI (not necessary to define the prompt)
@@ -18,9 +19,10 @@ export const initialMessages: ChatGPTMessage[] = [
   },
 ];
 
+// Define the InputMessage component
 const InputMessage = ({ input, setInput, sendMessage }: any) => (
   <div className="mt-6 flex clear-both">
-    <Input // Replace input with MUI Input component
+    <Input
       type="text"
       aria-label="chat input"
       required
@@ -49,21 +51,24 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
   </div>
 );
 
+// Define the Chat component with its props
 export default function Chat({ open, onClose }: ChatProps) {
+  // Define state variables for managing messages, input, and loading state
   const [messages, setMessages] = useState<ChatGPTMessage[]>(initialMessages);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [cookie, setCookie] = useCookies([COOKIE_NAME]);
+  const [cookie, setCookie] = useCookies([COOKIE_NAME]); // Use the useCookies hook to manage cookies
 
+  // Use useEffect to generate a unique user ID and set it as a cookie if it doesn't exist
   useEffect(() => {
     if (!cookie[COOKIE_NAME]) {
-      // Generate a semi-random short id
+      // Generate a semi-random short ID
       const randomId = Math.random().toString(36).substring(7);
       setCookie(COOKIE_NAME, randomId);
     }
   }, [cookie, setCookie]);
 
-  // Send message to API /api/chat endpoint
+  // Define the sendMessage function to send user messages to the API
   const sendMessage = async (message: string) => {
     setLoading(true);
     const newMessages = [
@@ -71,7 +76,7 @@ export default function Chat({ open, onClose }: ChatProps) {
       { role: 'user', content: message } as ChatGPTMessage,
     ];
     setMessages(newMessages);
-    const last10messages = newMessages.slice(-30); // Remember last 30 messages
+    const last10messages = newMessages.slice(-30); // Remember the last 30 messages
 
     try {
       const response = await fetch('/api/chat', {
@@ -123,6 +128,7 @@ export default function Chat({ open, onClose }: ChatProps) {
     }
   };
 
+  // Render the chat dialog and its content
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogContent>
