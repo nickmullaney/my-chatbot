@@ -1,6 +1,6 @@
 // Import necessary types and modules
-import { type ChatGPTMessage } from '../../components/chatLine'
-import { OpenAIStream, OpenAIStreamPayload } from '../../utils/openAIStream'
+import { type ChatGPTMessage } from '../../src/components/chatLine'
+import { OpenAIStream, OpenAIStreamPayload } from '../../src/utils/openAIStream'
 
 // Check if the OPENAI_API_KEY environment variable is missing and throw an error if it is
 if (!process.env.OPENAI_API_KEY) {
@@ -8,9 +8,9 @@ if (!process.env.OPENAI_API_KEY) {
 }
 
 // Define configuration settings
-export const config = {
-  runtime: 'edge',
-}
+// export const config = {
+//   runtime: 'edge',
+// }
 
 // Define the request handler function
 const handler = async (req: Request): Promise<Response> => {
