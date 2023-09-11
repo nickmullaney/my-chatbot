@@ -8,9 +8,9 @@ if (!process.env.OPENAI_API_KEY) {
 }
 
 // Define configuration settings
-// export const config = {
-//   runtime: 'edge',
-// }
+export const config = {
+  runtime: 'edge',
+}
 
 // Define the request handler function
 const handler = async (req: Request): Promise<Response> => {
