@@ -76,7 +76,7 @@ export default function Chat({ open, onClose }: ChatProps) {
       { role: 'user', content: message } as ChatGPTMessage,
     ];
     setMessages(newMessages);
-    const last10messages = newMessages.slice(-30); // Remember the last 30 messages
+    const last30messages = newMessages.slice(-30); // Remember the last 30 messages
 
     try {
       const response = await fetch('/api/chat', {
@@ -85,7 +85,7 @@ export default function Chat({ open, onClose }: ChatProps) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          messages: last10messages,
+          messages: last30messages,
           user: cookie[COOKIE_NAME],
         }),
       });
