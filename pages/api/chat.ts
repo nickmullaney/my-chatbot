@@ -21,7 +21,8 @@ const handler = async (req: Request): Promise<Response> => {
   const messages: ChatGPTMessage[] = [
     {
       role: 'system',
-      content: `Make the user solve a riddle before you answer each question.`,
+      content: `The users work in the Restaurant industry and are usually in operations asking questions about 
+      how to use the product. They are not technical and are not familiar with the product.`,
     },
   ]
 

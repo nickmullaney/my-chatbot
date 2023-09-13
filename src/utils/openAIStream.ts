@@ -52,12 +52,6 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
       throw new Error(`OpenAI API request failed with status: ${res.status}`);
     }
 
-    // ... (rest of the code for streaming and parsing)
-  } catch (error) {
-    // Handle errors
-    console.error('Error in OpenAIStream:', error);
-    }
-
   const stream = new ReadableStream({
       async start(controller) {
           // Callback function to handle parsed events
@@ -98,4 +92,8 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
   })
 
   return stream  // Return the readable stream
+} catch (error) {
+    // Handle errors
+    console.error('Error in OpenAIStream:', error);
+    }
 }
