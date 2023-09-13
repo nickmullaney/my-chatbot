@@ -30,9 +30,9 @@ export default function ChatComponent() {
                         {/* Formatting the message */}
                         {message.content.split("\n").map((currentTextBlock: string, index : number) => {
                             if(currentTextBlock === "") {
-                                return <p key={message.id + index}>&nbsp;</p> // " "
+                                return <p key={message.id + index}>&nbsp;</p> 
                             } else {
-                                return <p key={message.id + index}>{currentTextBlock}</p> // "Cooper Codes is a YouTuber"
+                                return <p key={message.id + index}>{currentTextBlock}</p> 
                             }
                         })}
 
@@ -48,7 +48,7 @@ export default function ChatComponent() {
                     value={input}
                     onChange={handleInputChange}
                 />
-                console.log(input);
+                
                 <button className="rounded-md bg-blue-600 p-2 mt-2">
                     Send message
                 </button>
