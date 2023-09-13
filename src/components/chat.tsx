@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Dialog, DialogContent, Input } from '@mui/material'; // Import MUI components
 import { type ChatGPTMessage, ChatLine, LoadingChatLine } from './chatLine';
 import { useCookies } from 'react-cookie';
+// import { getRelevantZDArticles, ZendeskArticle } from '@/utils/zendesk' //ZD Integration
 
 interface ChatProps {
   open: boolean;
@@ -79,6 +80,9 @@ export default function Chat({ open, onClose }: ChatProps) {
     const last30messages = newMessages.slice(-30); // Remember the last 30 messages
 
     try {
+      //Check if the user's message triggers a request for a ZD article
+      // if(message.toLocaleLowerCase().includes('help'))
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {

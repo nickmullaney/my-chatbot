@@ -12,7 +12,7 @@ interface AvatarButtonProps {
 const AvatarButton: React.FC<AvatarButtonProps> = ({ onClick }) => {
     // Render a button with a contained style and a primary color
     return (
-        <Button variant='contained' color='primary' onClick={onClick}>
+        <Button variant='contained' color='primary' onClick={onClick} >
           {/* Render an Avatar component with an image source and a ChatIcon */}
           <Avatar src='https://6423873.fs1.hubspotusercontent-na1.net/hub/6423873/hubfs/chatbot-new7.png?width=108&height=108' >
             <ChatIcon />

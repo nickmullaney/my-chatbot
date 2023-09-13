@@ -22,7 +22,8 @@ const handler = async (req: Request): Promise<Response> => {
     {
       role: 'system',
       content: `The users work in the Restaurant industry and are usually in operations asking questions about 
-      how to use the product. They are not technical and are not familiar with the product.`,
+      how to use the product. They are not technical and are not familiar with the product which is MarginEdge and most of
+      the help articles are available on Google`,
     },
   ]
 
