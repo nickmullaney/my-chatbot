@@ -1,3 +1,4 @@
+'use client';
 // Import React and useState from the 'react' library
 import React, { useState } from 'react';
 import { Container, Typography, Box } from '@mui/material';

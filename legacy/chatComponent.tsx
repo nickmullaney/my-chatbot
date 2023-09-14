@@ -5,7 +5,7 @@ export default function ChatComponent() {
   
     // useChat -> handles messages for us, user input, handling user submits, etc.
     const { input, handleInputChange, handleSubmit, isLoading, messages } = useChat();
-    // messages -> [user asks a question, gpt-4 response, user asks again, gpt-4 responds]
+    // messages -> [user asks a question, gpt-3.5 response, user asks again, gpt-4 responds]
 
     console.log(messages);
     console.log(input);
@@ -30,9 +30,9 @@ export default function ChatComponent() {
                         {/* Formatting the message */}
                         {message.content.split("\n").map((currentTextBlock: string, index : number) => {
                             if(currentTextBlock === "") {
-                                return <p key={message.id + index}>&nbsp;</p> // " "
+                                return <p key={message.id + index}>&nbsp;</p> 
                             } else {
-                                return <p key={message.id + index}>{currentTextBlock}</p> // "Cooper Codes is a YouTuber"
+                                return <p key={message.id + index}>{currentTextBlock}</p> 
                             }
                         })}
 
@@ -48,6 +48,7 @@ export default function ChatComponent() {
                     value={input}
                     onChange={handleInputChange}
                 />
+                
                 <button className="rounded-md bg-blue-600 p-2 mt-2">
                     Send message
                 </button>

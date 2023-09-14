@@ -40,11 +40,17 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
       requestHeaders['OpenAI-Organization'] = process.env.OPENAI_API_ORG
   }
 
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
-      headers: requestHeaders,               // Send a POST request to the OpenAI API
+  try {
+    // Send a POST request to the OpenAI API
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+      headers: requestHeaders,
       method: 'POST',
       body: JSON.stringify(payload),
-  })
+    });
+
+    if (!res.ok) {
+      throw new Error(`OpenAI API request failed with status: ${res.status}`);
+    }
 
   const stream = new ReadableStream({
       async start(controller) {
@@ -86,4 +92,8 @@ export async function OpenAIStream(payload: OpenAIStreamPayload) {
   })
 
   return stream  // Return the readable stream
+} catch (error) {
+    // Handle errors
+    console.error('Error in OpenAIStream:', error);
+    }
 }

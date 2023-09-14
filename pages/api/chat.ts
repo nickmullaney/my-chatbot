@@ -1,6 +1,6 @@
 // Import necessary types and modules
-import { type ChatGPTMessage } from '../../components/chatLine'
-import { OpenAIStream, OpenAIStreamPayload } from '../../utils/openAIStream'
+import { type ChatGPTMessage } from '../../src/components/chatLine'
+import { OpenAIStream, OpenAIStreamPayload } from '../../src/utils/openAIStream'
 
 // Check if the OPENAI_API_KEY environment variable is missing and throw an error if it is
 if (!process.env.OPENAI_API_KEY) {
@@ -21,7 +21,9 @@ const handler = async (req: Request): Promise<Response> => {
   const messages: ChatGPTMessage[] = [
     {
       role: 'system',
-      content: `Make the user solve a riddle before you answer each question.`,
+      content: `The users work in the Restaurant industry and are usually in operations asking questions about 
+      how to use the product. They are not technical and are not familiar with the product which is MarginEdge and most of
+      the help articles are available on Google`,
     },
   ]
 
