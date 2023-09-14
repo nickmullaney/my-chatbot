@@ -1,11 +1,15 @@
 // src/utils/zendesk.ts
 import axios, { AxiosInstance } from 'axios';
 
+// Replace these with your actual values
+const zendeskBaseUrl = 'https://yoursubdomain.zendesk.com';
+const zendeskApiToken = 'ZENDESK_API_TOKEN';
+
 const zendesk: AxiosInstance = axios.create({
-  baseURL: 'https://yoursubdomain.zendesk.com/api/v2',
+  baseURL: `${zendeskBaseUrl}/api/v2`,
   headers: {
     'Content-Type': 'application/json',
-    Authorization: `Bearer YOUR_ZENDESK_API_TOKEN`,
+    Authorization: `Bearer ${zendeskApiToken}`,
   },
 });
 
