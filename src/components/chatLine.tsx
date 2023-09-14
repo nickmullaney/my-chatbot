@@ -4,7 +4,6 @@ import { Avatar } from "@mui/material";
 
 // wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
 const BalancerWrapper = (props: any) => <Balancer {...props} />;
-
 type ChatGPTAgent = "user" | "system" | "assistant";
 
 export interface ChatGPTMessage {
