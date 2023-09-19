@@ -1,9 +1,6 @@
 import clsx from "clsx";
-// import Balancer from "react-wrap-balancer";
 import { Avatar } from "@mui/material";
 
-// wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
-// const BalancerWrapper = (props: any) => <Balancer {...props} />;
 type ChatGPTAgent = "user" | "system" | "assistant";
 
 export interface ChatGPTMessage {
@@ -56,7 +53,6 @@ export function ChatLine({ role = "assistant", content }: ChatGPTMessage) {
         <div className="float-right mb-5 rounded-lg bg-white px-4 py-5 shadow-lg ring-1 ring-zinc-100 sm:px-6">
           <div className="flex space-x-3">
             <div className="flex-1 gap-4">
-              {/* <BalancerWrapper> */}
                 <p className="font-large text-xxl text-gray-900 min-w-100%">
                   <a href="#" className="hover:underline">
                     {role == "assistant" ? "Marge" : "You"}
@@ -72,7 +68,6 @@ export function ChatLine({ role = "assistant", content }: ChatGPTMessage) {
                 >
                   {formattMessage}
                 </p>
-              {/* </BalancerWrapper> */}
             </div>
           </div>
         </div>
