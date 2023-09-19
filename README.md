@@ -1,13 +1,10 @@
-Certainly! I'll help you fill out each section of the README.md template with more specific information. Remember to replace placeholder text with your actual project details.
-
-
-# Chatbot Project
+# OpenAi Chatbot connected to Zendesk API
 
 An AI-powered chatbot project that provides real-time assistance and integrates with Zendesk for help article retrieval.
 
 ## Table of Contents
 
-- [Chatbot Project](#chatbot-project)
+- [OpenAi Chatbot connected to Zendesk API](#openai-chatbot-connected-to-zendesk-api)
   - [Table of Contents](#table-of-contents)
   - [Project Overview](#project-overview)
   - [Technologies Used](#technologies-used)
@@ -29,12 +26,37 @@ The Chatbot Project is an interactive chat interface powered by AI. It allows us
 
 ## Technologies Used
 
-- JavaScript/TypeScript
-- React
-- Node.js
-- Express.js
-- OpenAI API
-- Zendesk Integration
+- [Next.js](https://nextjs.org/) - A React framework for building server-rendered React applications.
+
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+
+- [React DOM](https://reactjs.org/docs/react-dom.html) - React package for working with the DOM.
+
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for quickly building custom designs.
+
+- [Material-UI](https://mui.com/) - A popular React UI framework for building responsive web applications.
+
+- [Emotion](https://emotion.sh/) - A library for writing CSS styles with JavaScript.
+
+- [Axios](https://axios-http.com/) - A promise-based HTTP client for making requests to your API.
+
+- [React Cookie](https://www.npmjs.com/package/react-cookie) - A library for handling cookies in React applications.
+
+- [OpenAI](https://beta.openai.com/docs/introduction) - An AI platform used for natural language processing tasks.
+
+- [OpenAI Edge](https://github.com/openai/openai-edge-js) - A JavaScript client for the OpenAI API.
+
+- [Eventsource Parser](https://www.npmjs.com/package/eventsource-parser) - A library for parsing Server-Sent Events (SSE) data.
+
+- [PostCSS](https://postcss.org/) - A CSS post-processor that helps with transforming styles.
+
+- [TypeScript](https://www.typescriptlang.org/) - A statically typed superset of JavaScript for building scalable web applications.
+
+- [ESLint](https://eslint.org/) - A tool for identifying and fixing problems in your JavaScript code.
+
+- [Autoprefixer](https://autoprefixer.github.io/) - A PostCSS plugin to parse CSS and add vendor prefixes to CSS rules.
+
+- [clsx](https://github.com/lukeed/clsx) - A utility for constructing className strings in JavaScript.
 
 ## Features
 
@@ -92,9 +114,9 @@ The project integrates with Zendesk and OpenAI to provide a comprehensive chatbo
 
 ### Zendesk Integration
 
-- **Access to Help Articles**: Users can access help articles from Zendesk to get detailed information about the product.
+- **Access to Help Articles**: Users can access help articles from Zendesk to get detailed information about the website and the web application.
 
-- **AI-Driven Assistance**: The chatbot can retrieve and suggest relevant Zendesk articles when users ask questions related to the product.
+- **AI-Driven Assistance**: The chatbot can retrieve and suggest relevant Zendesk articles when users ask questions related to the product or find outside information to supplement.
 
 ### OpenAI Integration
 
