@@ -30,7 +30,7 @@ function Home() {
         {/* Render a Typography component with a greeting */}
         <Typography variant="h2">Hi Im Marge</Typography>
 
-        <Box className="lg:w-2/3">
+        <Box className="min-w-max">
           {/* Render the Chat component and pass the 'open' and 'onClose' props */}
           <Chat open={isChatOpen} onClose={handleCloseChat} />
         </Box>

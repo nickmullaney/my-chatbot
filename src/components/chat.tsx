@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Dialog, DialogContent, Input } from '@mui/material'; // Import MUI components
 import { type ChatGPTMessage, ChatLine, LoadingChatLine } from './chatLine';
 import { useCookies } from 'react-cookie';
-// import { getRelevantZDArticles, ZendeskArticle } from '@/utils/zendesk' //ZD Integration
+import { Avatar } from "@mui/material"; // Import Avatar component
 
 interface ChatProps {
   open: boolean;
@@ -80,8 +80,8 @@ export default function Chat({ open, onClose }: ChatProps) {
     const last30messages = newMessages.slice(-30); // Remember the last 30 messages
 
     try {
-      //Check if the user's message triggers a request for a ZD article
-      // if(message.toLocaleLowerCase().includes('help'))
+      // Check if the user's message triggers a request for a ZD article
+      // if (message.toLocaleLowerCase().includes('help'))
 
       const response = await fetch('/api/chat', {
         method: 'POST',
@@ -136,7 +136,7 @@ export default function Chat({ open, onClose }: ChatProps) {
   return (
     <Dialog open={open} onClose={onClose}>
       <DialogContent>
-        <div className="rounded-2xl border-zinc-100  lg:border lg:p-6">
+        <div className="rounded-2xl border-zinc-100 lg:border lg:p-6 chat-container">
           {messages.map(({ content, role }, index) => (
             <ChatLine key={index} role={role} content={content} />
           ))}

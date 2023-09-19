@@ -17,6 +17,11 @@
 }
 
 body {
-  color: #fff; /* Text color */
-  background: #000; /* Background color */
+  color: rgb(var(--foreground-rgb));
+  background: black;
+
+}
+
+.chat-bubble{
+  width: fit-content;
 }
