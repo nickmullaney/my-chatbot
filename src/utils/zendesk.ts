@@ -2,7 +2,8 @@
 import axios, { AxiosInstance } from 'axios';
 
 // Replace these with your actual values
-const zendeskBaseUrl = 'https://yoursubdomain.zendesk.com';
+//I think this is the correct URL
+const zendeskBaseUrl = 'https://help.marginedge.com/hc/en-us/sections';
 const zendeskApiToken = 'ZENDESK_API_TOKEN';
 
 const zendesk: AxiosInstance = axios.create({
