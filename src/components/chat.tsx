@@ -21,7 +21,7 @@ export const initialMessages: ChatGPTMessage[] = [
 ];
 
 // Define the InputMessage component
-const InputMessage = ({ input, setInput, sendMessage }: any) => (
+const InputMessage = ({ input, setInput, sendMessage, streaming }: any) => (
   <div className="mt-6 flex clear-both">
     <Input
       type="text"
@@ -29,6 +29,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
       required
       className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm"
       value={input}
+      disabled={streaming} // Disable the input if streaming is true
       onKeyDown={(e) => {
         if (e.key === 'Enter') {
           sendMessage(input);
@@ -46,6 +47,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
         sendMessage(input);
         setInput('');
       }}
+      disabled={streaming} // Disable the button if streaming is true
     >
       Send
     </Button>
@@ -59,6 +61,8 @@ export default function Chat({ open, onClose }: ChatProps) {
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [cookie, setCookie] = useCookies([COOKIE_NAME]); // Use the useCookies hook to manage cookies
+  const [streaming, setStreaming] = useState(false); // State for streaming
+
 
   // Use useEffect to generate a unique user ID and set it as a cookie if it doesn't exist
   useEffect(() => {
@@ -71,6 +75,7 @@ export default function Chat({ open, onClose }: ChatProps) {
 
   // Define the sendMessage function to send user messages to the API
   const sendMessage = async (message: string) => {
+    setStreaming(true);
     setLoading(true);
     const newMessages = [
       ...messages,
@@ -129,6 +134,8 @@ export default function Chat({ open, onClose }: ChatProps) {
     } catch (error) {
       console.error('Error:', error);
       setLoading(false);
+    } finally {
+      setStreaming(false);
     }
   };
 
@@ -152,6 +159,7 @@ export default function Chat({ open, onClose }: ChatProps) {
             input={input}
             setInput={setInput}
             sendMessage={sendMessage}
+            streaming={streaming} // Pass the streaming state to the InputMessage component
           />
         </div>
       </DialogContent>
