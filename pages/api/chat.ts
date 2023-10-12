@@ -38,6 +38,7 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   // Include the OpenAI-Organization header if OPENAI_API_ORG is defined
+  // Not currently used in this example
   if (process.env.OPENAI_API_ORG) {
     requestHeaders['OpenAI-Organization'] = process.env.OPENAI_API_ORG
   }
@@ -49,7 +50,7 @@ const handler = async (req: Request): Promise<Response> => {
     temperature: process.env.AI_TEMP ? parseFloat(process.env.AI_TEMP) : 0.7,
     max_tokens: process.env.AI_MAX_TOKENS
       ? parseInt(process.env.AI_MAX_TOKENS)
-      : 100,
+      : 300,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
