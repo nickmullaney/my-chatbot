@@ -46,6 +46,7 @@ const InputMessage = ({ input, setInput, sendMessage, streaming }: any) => (
       onClick={() => {
         sendMessage(input);
         setInput('');
+        console.log('Streaming Status input',streaming);
       }}
       disabled={streaming} // Disable the button if streaming is true
     >
@@ -66,6 +67,7 @@ export default function Chat({ open, onClose }: ChatProps) {
 
   // Use useEffect to generate a unique user ID and set it as a cookie if it doesn't exist
   useEffect(() => {
+    console.log('Streaming Status use effect',streaming);
     if (!cookie[COOKIE_NAME]) {
       // Generate a semi-random short ID
       const randomId = Math.random().toString(36).substring(7);
@@ -136,6 +138,7 @@ export default function Chat({ open, onClose }: ChatProps) {
       setLoading(false);
     } finally {
       setStreaming(false);
+      console.log('Streaming Status finally',streaming);
     }
   };
 
@@ -147,9 +150,7 @@ export default function Chat({ open, onClose }: ChatProps) {
           {messages.map(({ content, role }, index) => (
             <ChatLine key={index} role={role} content={content} />
           ))}
-
           {loading && <LoadingChatLine />}
-
           {messages.length < 2 && (
             <span className="mx-auto flex flex-grow text-gray-600 clear-both">
               Type a message to start the conversation
